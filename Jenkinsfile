@@ -3,27 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Halina23/landing-pages-project.git'
-            }
-        }
-
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                sh 'cd environments/dev && terraform init'
             }
         }
 
         stage('Terraform Validate') {
             steps {
-                sh 'terraform validate'
+                sh 'cd environments/dev && terraform validate'
             }
         }
 
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan'
+                sh 'cd environments/dev && terraform plan'
             }
         }
 
@@ -42,7 +36,7 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline executado com sucesso'
+            echo 'Pipeline executada com sucesso'
         }
 
         failure {
