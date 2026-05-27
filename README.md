@@ -26,6 +26,7 @@ Este projeto foi desenvolvido para praticar:
 - CSS
 - Git
 - GitHub
+- Jenkins
 
 ---
 
