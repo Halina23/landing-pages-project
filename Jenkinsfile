@@ -13,12 +13,7 @@ pipeline {
             steps {
                 sh 'cd environments/dev && terraform validate'
             }
-        }
-
-        stage('Terraform Plan') {
-            steps {
-                sh 'cd environments/dev && terraform plan'
-            }
+        
         }
 
         stage('Docker Compose Build') {
